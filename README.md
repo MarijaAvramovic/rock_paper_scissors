@@ -28,7 +28,7 @@ Plan or pseudocode solution :
 - 5th round will check the points for each player and 
 declare a winner 
 
-First understood the task then wrote a pseudocode and after started with code.
+First I understood the task then wrote a pseudocode and after started with code.
 
 I used an external JavaScript file with no elements in html.
 This game is played entirely via the console.
@@ -66,9 +66,9 @@ With two parameters for playRound: humanChoice and computerChoice. Use these two
 5.  Code to play the entire game
 The game will play 5 rounds.
 (**playGame**) function created that 
-1. calls playRound to play 5 rounds with for (*i*) 
-2. keeps track of the scores and 
-3. declares a winner at the end.
+- calls playRound to play 5 rounds with for (*i*) 
+- keeps track of the scores and 
+- declares a winner at the end.
 
 Once I created a new function named playGame.
 I called the playRound function and score variables so that they’re declared inside of the new playGame function every time with increment by calling playRound 5 times.
