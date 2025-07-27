@@ -99,6 +99,19 @@ function playGame(){
              console.log("Round number: " + i );
              playRound(b,a);
         }
+        console.log("5 rounds are done!")
+        //winner is?
+
+        if (humanScore > computerScore){
+            console.log("You are the winner! After 5 rounds you have " + humanScore + " points and computer has " + computerScore + " points.");
+        }
+        else if (humanScore < computerScore){
+            console.log("You lost! After 5 rounds you have " + humanScore + " points and computer has " + computerScore + " points. Computer winns!");
+        }
+        else {
+             
+            console.log("We have no winner! After 5 rounds you have " + humanScore + " points and computer has " + computerScore + " points.");
+        }
         
 }
  playGame();
