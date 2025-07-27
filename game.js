@@ -1,5 +1,4 @@
-//let choice1 = prompt("message");
-//console.log(choice1.toLowerCase());
+ 
 
  // players score variables will start from 0
  let computerScore = 0;
@@ -26,7 +25,7 @@ function getComputerChoice(){
  
 //users choice
 
-let b = getHumanChoice();
+
 function getHumanChoice(){
    let y = prompt("Rock, Paper, Scissors?");
     return y.toLowerCase();
