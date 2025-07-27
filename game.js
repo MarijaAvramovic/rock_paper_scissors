@@ -17,7 +17,7 @@ function getComputerChoice(){
 
 }
 let a = getComputerChoice();
-console.log(a);
+console.log("Computers choice: " + a);
  
 //users choice
 
@@ -27,6 +27,9 @@ function getHumanChoice(){
    let y = prompt("Rock, Paper, Scissors?");
     return y.toLowerCase();
 }
-console.log(b);
+console.log("Humans choice: " + b);
 
- 
+ // players score variables will start from 0
+ let computerScore = 0;
+ let humanScore = 0;
+console.log(computerScore, humanScore);
