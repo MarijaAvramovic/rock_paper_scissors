@@ -1,6 +1,10 @@
 //let choice1 = prompt("message");
 //console.log(choice1.toLowerCase());
 
+ // players score variables will start from 0
+ let computerScore = 0;
+ let humanScore = 0;
+ console.log("GAME START Computers score; " + computerScore, "Your score; " + humanScore);
 
 function getComputerChoice(){
         let x = parseInt(Math.random() * 100);
@@ -27,9 +31,19 @@ function getHumanChoice(){
    let y = prompt("Rock, Paper, Scissors?");
     return y.toLowerCase();
 }
-console.log("Humans choice: " + b);
+console.log("Your choice: " + b);
 
- // players score variables will start from 0
- let computerScore = 0;
- let humanScore = 0;
-console.log(computerScore, humanScore);
+
+
+//single round
+
+function playRound(humanChoice, computerChoice){
+     if(humanChoice == "rock" && computerChoice == "paper")
+     {
+        computerScore++;
+        console.log("You lose! Paper beats rock");
+         
+     }
+     console.log("Computers score; " + computerScore, "Your score; " + humanScore);
+}
+playRound(b,a);
