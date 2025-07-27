@@ -4,7 +4,7 @@
  // players score variables will start from 0
  let computerScore = 0;
  let humanScore = 0;
- console.log("GAME START Computers score; " + computerScore, "Your score; " + humanScore);
+ console.log("GAME START Computers score: " + computerScore, "Your score: " + humanScore);
 
 function getComputerChoice(){
         let x = parseInt(Math.random() * 100);
@@ -21,7 +21,7 @@ function getComputerChoice(){
 
 }
 let a = getComputerChoice();
-console.log("Computers choice: " + a);
+
  
 //users choice
 
@@ -31,13 +31,16 @@ function getHumanChoice(){
    let y = prompt("Rock, Paper, Scissors?");
     return y.toLowerCase();
 }
-console.log("Your choice: " + b);
+
 
 
 
 //single round
 
 function playRound(humanChoice, computerChoice){
+    console.log("Computers choice: " + a);
+    console.log("Your choice: " + b);
+    //computer winns
      if(humanChoice == "rock" && computerChoice == "paper")
      {
         computerScore++;
@@ -47,7 +50,7 @@ function playRound(humanChoice, computerChoice){
      else if(humanChoice == "paper" && computerChoice == "scissors")
      {
         computerScore++;
-        console.log("You lose! Scissors beats paper");
+        console.log("You lose! Scissors beat paper");
          
      }
      else if(humanChoice == "scissors" && computerChoice == "rock")
@@ -56,7 +59,40 @@ function playRound(humanChoice, computerChoice){
         console.log("You lose! Rock beats scissors");
          
      }
-     
-     console.log("Computers score; " + computerScore, "Your score; " + humanScore);
+       //computer winns
+
+    else if(computerChoice == "scissors" && humanChoice == "rock")
+     {
+        humanScore++;
+        console.log("You win! Rock beats scissors");
+         
+     }
+     else if(computerChoice == "paper" && humanChoice == "scissors")
+     {
+        humanScore++;
+        console.log("You win! Scissors beat paper");
+         
+     }
+
+     else if(computerChoice == "rock" && humanChoice == "paper")
+     {
+        humanScore++;
+        console.log("You win! Paper beats rock");
+         
+     }
+     else console.log("No points! Do it again!");
+  // log a score
+     console.log("Computers score: " + computerScore, "Your score: " + humanScore);
+
 }
-playRound(b,a);
+playRound(a,b);
+/* 5 rounds
+
+function playGame(){
+        for(i=1; i<=5; i++){
+             console.log("Round number: " + i );
+             playRound(b,a);
+        }
+
+}
+ playGame();*/
