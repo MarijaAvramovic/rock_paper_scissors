@@ -6,6 +6,7 @@
  let humanScore = 0;
  console.log("GAME START Computers score: " + computerScore, "Your score: " + humanScore);
 
+ //computer choice
 function getComputerChoice(){
         let x = parseInt(Math.random() * 100);
 
@@ -39,7 +40,7 @@ function getHumanChoice(){
 function playRound(humanChoice, computerChoice){
     console.log("Computers choice: " + computerChoice);
     console.log("Your choice: " + humanChoice);
-    //computer winns
+    //IF computer winns
      if(humanChoice == "rock" && computerChoice == "paper")
      {
         computerScore++;
@@ -58,7 +59,7 @@ function playRound(humanChoice, computerChoice){
         console.log("You lose! Rock beats scissors");
          
      }
-       //computer winns
+       // IF computer winns
 
     else if(computerChoice == "scissors" && humanChoice == "rock")
      {
