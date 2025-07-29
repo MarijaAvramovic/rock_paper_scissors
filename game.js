@@ -5,9 +5,9 @@
 
  console.log(messageScore);
 
-let randomNumber = parseInt(Math.random() * 100);
-function getComputerChoice(){
 
+function getComputerChoice(){
+let randomNumber = parseInt(Math.random() * 100);
         if (randomNumber <= 33){
               return "rock";
         }
@@ -20,7 +20,7 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    prompt("Rock, Paper, Scissors?").toLowerCase();
+    return prompt("Rock, Paper, Scissors?").toLowerCase();
 }
 
 
@@ -33,33 +33,33 @@ function playRound(humanChoice, computerChoice){
       || (humanChoice == "scissors" && computerChoice == "rock") )
      {
         computerScore++;
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);    
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);}    
        // IF human winns
-    else if( (computerChoice == "scissors" && humanChoice == "rock") 
+    else if ( (computerChoice == "scissors" && humanChoice == "rock") 
       || (computerChoice == "paper" && humanChoice == "scissors")
    || (computerChoice == "rock" && humanChoice == "paper") )
      {
         humanScore++;
         console.log(`You win! ${humanChoice} beats ${computerChoice}`);
      }
-     else console.log("No points! Do it again!");
-  // log a score
-     console.log(messageScore);
+     else
+     {
+      console.log("No points! Do it again!");
+   }
+
+     console.log(`Computers score: ${computerScore} Your score: ${humanScore}`);
 }
 
 
-// 5 rounds
-
 function playGame(){
-
-
 
         for(i=1; i<=5; i++){
 
-            let b = getHumanChoice();
-            let a = getComputerChoice();
+            let humanChoice = getHumanChoice();
+            let computerChoice = getComputerChoice();
+
              console.log("Round number: " + i );
-             playRound(b,a);
+             playRound(humanChoice, computerChoice);
         }
         console.log("5 rounds are done!")
         //winner is?
