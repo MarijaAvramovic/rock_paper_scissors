@@ -1,8 +1,11 @@
  
 
- // players score variables will start from 0
+ 
  let computerScore = 0;
  let humanScore = 0;
+
+ let messageScore = `Computers score: ${computerScore} Your score: ${humanScore}`;
+
  console.log("GAME START Computers score: " + computerScore, "Your score: " + humanScore);
 
  //computer choice
