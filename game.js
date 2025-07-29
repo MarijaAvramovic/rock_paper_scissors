@@ -1,24 +1,21 @@
- 
-
- 
  let computerScore = 0;
  let humanScore = 0;
 
  let messageScore = `Computers score: ${computerScore} Your score: ${humanScore}`;
 
- console.log("GAME START Computers score: " + computerScore, "Your score: " + humanScore);
+ console.log(messageScore);
 
  //computer choice
 function getComputerChoice(){
-        let x = parseInt(Math.random() * 100);
+        let randomNumber = parseInt(Math.random() * 100);
 
-        if (x <= 33){
+        if (randomNumber <= 33){
               return "rock";
         }
-          else if (x > 33 && x < 66){
+          else if (randomNumber > 33 && x < 66){
             return "paper";
         }
-          if (x >= 66){
+          if (randomNumber >= 66){
             return "scissors";
         }
 
