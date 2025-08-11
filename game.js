@@ -1,14 +1,25 @@
  const humanScoreDiv = document.querySelector('#humanScore');
  let humanScoreText = humanScoreDiv.textContent;
  let humanScore = parseInt(humanScoreText, 10);
- const computerScore = document.querySelector('#computerScore').textContent;
+
+ const computerScoreDiv = document.querySelector('#computerScore');
+ let computerScoreText = computerScoreDiv.textContent;
+ let computerScore = parseInt(humanScoreText, 10);
+
+ 
  const rowScore = document.querySelector('.row');
- const paraScore = document.createElement('p');
+ const paraRunningRound = document.createElement('p');
  const messageScore = `Computers score: ${computerScore} Your score: ${humanScore}`;
   
  const buttonRock = document.querySelector('#rock');
 buttonRock.addEventListener('click', function() {
-  humanScore++;
+  let humanChoice = "rock";
+  let computerChoice = getComputerChoice();
+
+ playRound(humanChoice, computerChoice);
+
+  console.log(humanChoice, computerChoice);
+  // humanScore++;
   humanScoreDiv.textContent = humanScore;
 });
 
@@ -33,36 +44,40 @@ let randomNumber = parseInt(Math.random() * 100);
         }
 }
 
-// function getHumanChoice(){
-//     return prompt("Rock, Paper, Scissors?").toLowerCase();
-// }
 
+function playRound(humanChoice, computerChoice){
+    // console.log("Computers choice: " + computerChoice);
+    // console.log("Your choice: " + humanChoice);
+    //IF computer winns
+     if( (humanChoice == "rock" && computerChoice == "paper")
+      || (humanChoice == "paper" && computerChoice == "scissors" ) 
+      || (humanChoice == "scissors" && computerChoice == "rock") )
+     {
+        
+        paraRunningRound.textContent = `Computer Selected ${computerChoice}. You lose! ${computerChoice} beats ${humanChoice}`;
+        rowScore.appendChild(paraRunningRound);
+      return computerScore++;}
+        // console.log(`You lose! ${computerChoice} beats ${humanChoice}`);}    
+       // IF human winns}
+    else if ( (computerChoice == "scissors" && humanChoice == "rock") 
+      || (computerChoice == "paper" && humanChoice == "scissors")
+   || (computerChoice == "rock" && humanChoice == "paper") )
+     {
+       
+        paraRunningRound.textContent = `Computer selected ${computerChoice}.You win! ${humanChoice} beats ${computerChoice}`;
+        rowScore.appendChild(paraRunningRound);
+         return humanScore++;
+        // console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+     }
+     else
+     {
+      paraRunningRound.textContent = "No points! Do it again!";
+        rowScore.appendChild(paraRunningRound);
+      // console.log("No points! Do it again!");
+   }
 
-// function playRound(humanChoice, computerChoice){
-//     console.log("Computers choice: " + computerChoice);
-//     console.log("Your choice: " + humanChoice);
-//     //IF computer winns
-//      if( (humanChoice == "rock" && computerChoice == "paper")
-//       || ( humanChoice == "paper" && computerChoice == "scissors" ) 
-//       || (humanChoice == "scissors" && computerChoice == "rock") )
-//      {
-//         computerScore++;
-//         console.log(`You lose! ${computerChoice} beats ${humanChoice}`);}    
-//        // IF human winns
-//     else if ( (computerChoice == "scissors" && humanChoice == "rock") 
-//       || (computerChoice == "paper" && humanChoice == "scissors")
-//    || (computerChoice == "rock" && humanChoice == "paper") )
-//      {
-//         humanScore++;
-//         console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-//      }
-//      else
-//      {
-//       console.log("No points! Do it again!");
-//    }
-
-//      console.log(`Computers score: ${computerScore} Your score: ${humanScore}`);
-// }
+    //  console.log(`Computers score: ${computerScore} Your score: ${humanScore}`);
+}
 
 
 // function playGame(){
