@@ -5,13 +5,19 @@
  const rowScore = document.querySelector('.row');
  const paraScore = document.createElement('p');
  const messageScore = `Computers score: ${computerScore} Your score: ${humanScore}`;
- 
+  
+ const buttonRock = document.querySelector('#rock');
+buttonRock.addEventListener('click', function() {
+  humanScore++;
+  humanScoreDiv.textContent = humanScore;
+});
 
 // humanScore++;
 // humanScoreDiv.textContent = humanScore;
  
 
  console.log(messageScore);
+
 
 
 function getComputerChoice(){
