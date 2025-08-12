@@ -75,12 +75,11 @@ I called the playRound function and score variables so that they’re declared i
 
 ## Phase Two Adding UI 
 
-Practice brancing, 
+Practicing branching
 
-Dropdown menu of branches on GitHub
  
-In my UI, the player should be able to play the game by clicking on buttons rather than typing their answer in a prompt.
-I will remove the logic that plays exactly five rounds.
+In my UI, the player is able to play the game by clicking on buttons rather than typing their answer in a prompt.
+Removed the logic that plays exactly five rounds.
 
 ### pseudo
 add score 
@@ -89,26 +88,17 @@ add buttons fixed in html
 on click add new p 
 if score is 5 in global scope alert msg who is the winner
 
-Create three buttons, one for each selection. Add an event listener to the buttons that call the playRound function with the correct playerSelection every time a button is clicked.
+I have three buttons, one for each selection. Add an event listener to the buttons that call the playRound function with the correct playerSelection every time a button is clicked. After  5 points blocking the buttons and shpwing reset button.
 
-On click I should have stored button selected as human choice, called computer choice and store it and play round which will add p/div showing human and computer choice and msg who is better after that change score reflected on the top of the page. If button is clicked again will do the same. 
+On click I stored button selected as human choice, called computer choice and store it and play round which will add p/div showing human and computer choice and msg who is better after that change score reflected on the top of the page. If button is clicked again will do the same. 
 
-Add a div for displaying results and change all of your console.logs into DOM methods.
+Add a div for displaying results removed console log for testing
 
-Display the running score, and 
+After one player reach 5 announce a winner of the game and reset for new game.
 
-After one player reach 5 announce a winner of the game.
+I will likely have to refactor (rework/rewrite) my new  code to make it look nice For now in phase 2 I practiced DOM and its working. 
 
-I will likely have to refactor (rework/rewrite) your original code to make it work for this. That’s OK! Reworking old code is an important part of a programmer’s life.
-Once i'm all done with your UI and made sure everything’s satisfactory, ensure all of my changes are committed to the rps-ui branch with git status before continuing.
-then merge the changes from my rps-ui branch back to our main branch.
-Checkout the branch we want to merge INTO i.e. main with the command git checkout main.
-Now let’s merge our rps-ui branch into main, our current branch, with git merge rps-ui.
-If everything goes fine, our rps-ui branch is now successfully merged with main! Use git log and you’ll see all the commits you’ve made to your feature branch on top of the commits you made to the main branch. Now for our final step!
-Let’s push our main branch into our remote repo by running git push origin main . Go to your GitHub repo and you’ll see that our main branch will have all the changes and commits you made to the rps-ui branch. Congratulations! You’ve successfully pushed your first feature into your production branch!
-Now that we have all our code in the main branch, we don’t really need our rps-ui branch anymore. Let’s do some cleanup, both locally and in the remote repo. Delete the branch from our local repo with git branch -d rps-ui and also delete it from the remote repo on GitHub with git push origin --delete rps-ui. Congrats, we’re all done with our cleanup!
-Make sure to publish the project on GitHub Pages and add a live preview link in the project lesson.
-
+#### Time to build: 4hr (from updating readme, adding pseudocode to pushing to github phase 2 took longer then 1st) 
 
 
  
