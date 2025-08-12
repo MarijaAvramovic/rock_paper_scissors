@@ -29,9 +29,20 @@ buttonRock.addEventListener('click', function() {
  finishGame();
 });
 
- const buttonRock = document.querySelector('#rock');
-buttonRock.addEventListener('click', function() {
-  let humanChoice = "rock";
+ const btnPaper = document.querySelector('#paper');
+btnPaper.addEventListener('click', function() {
+  let humanChoice = "paper";
+  let computerChoice = getComputerChoice();
+
+ playRound(humanChoice, computerChoice);
+ humanScoreDiv.textContent = humanScore;
+ computerScoreDiv.textContent = computerScore;
+ finishGame();
+});
+
+const btnScissors = document.querySelector('#scissors');
+btnScissors.addEventListener('click', function() {
+  let humanChoice = "scissors";
   let computerChoice = getComputerChoice();
 
  playRound(humanChoice, computerChoice);
