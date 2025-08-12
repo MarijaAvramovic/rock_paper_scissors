@@ -1,3 +1,5 @@
+
+
  const humanScoreDiv = document.querySelector('#humanScore');
  let humanScoreText = humanScoreDiv.textContent;
  let humanScore = parseInt(humanScoreText, 10);
@@ -7,9 +9,14 @@
  let computerScore = parseInt(humanScoreText, 10);
 
  
- const rowScore = document.querySelector('.row');
+ const roundAnnounce = document.querySelector('#roundAnnounce');
  const paraRunningRound = document.createElement('p');
  const messageScore = `Computers score: ${computerScore} Your score: ${humanScore}`;
+ const buttons = document.querySelector('.button-group');
+ const reset = document.createElement('button');
+
+ const divHolderTwo = document.querySelector('.two');
+ const divReset = document.createElement('div');
   
  const buttonRock = document.querySelector('#rock');
 buttonRock.addEventListener('click', function() {
@@ -17,17 +24,35 @@ buttonRock.addEventListener('click', function() {
   let computerChoice = getComputerChoice();
 
  playRound(humanChoice, computerChoice);
-
-  console.log(humanChoice, computerChoice);
-  // humanScore++;
-  humanScoreDiv.textContent = humanScore;
+ humanScoreDiv.textContent = humanScore;
+ computerScoreDiv.textContent = computerScore;
+ finishGame();
 });
 
-// humanScore++;
-// humanScoreDiv.textContent = humanScore;
- 
+ const buttonRock = document.querySelector('#rock');
+buttonRock.addEventListener('click', function() {
+  let humanChoice = "rock";
+  let computerChoice = getComputerChoice();
 
- console.log(messageScore);
+ playRound(humanChoice, computerChoice);
+ humanScoreDiv.textContent = humanScore;
+ computerScoreDiv.textContent = computerScore;
+ finishGame();
+});
+
+reset.addEventListener('click', function() {
+  
+ humanScoreDiv.textContent = 0;
+ computerScoreDiv.textContent = 0;
+  
+ paraRunningRound.textContent = "Good Luck!"
+ divHolderTwo.appendChild(buttons);
+ this.remove();
+
+  humanScore = 0;
+  computerScore = 0;
+  return (humanScore, computerScore);
+});
 
 
 
@@ -46,18 +71,16 @@ let randomNumber = parseInt(Math.random() * 100);
 
 
 function playRound(humanChoice, computerChoice){
-    // console.log("Computers choice: " + computerChoice);
-    // console.log("Your choice: " + humanChoice);
-    //IF computer winns
+  
      if( (humanChoice == "rock" && computerChoice == "paper")
       || (humanChoice == "paper" && computerChoice == "scissors" ) 
       || (humanChoice == "scissors" && computerChoice == "rock") )
      {
         
         paraRunningRound.textContent = `Computer Selected ${computerChoice}. You lose! ${computerChoice} beats ${humanChoice}`;
-        rowScore.appendChild(paraRunningRound);
+        roundAnnounce.appendChild(paraRunningRound);
       return computerScore++;}
-        // console.log(`You lose! ${computerChoice} beats ${humanChoice}`);}    
+        
        // IF human winns}
     else if ( (computerChoice == "scissors" && humanChoice == "rock") 
       || (computerChoice == "paper" && humanChoice == "scissors")
@@ -65,44 +88,48 @@ function playRound(humanChoice, computerChoice){
      {
        
         paraRunningRound.textContent = `Computer selected ${computerChoice}.You win! ${humanChoice} beats ${computerChoice}`;
-        rowScore.appendChild(paraRunningRound);
+        roundAnnounce.appendChild(paraRunningRound);
          return humanScore++;
-        // console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+         
      }
      else
      {
       paraRunningRound.textContent = "No points! Do it again!";
-        rowScore.appendChild(paraRunningRound);
-      // console.log("No points! Do it again!");
+        roundAnnounce.appendChild(paraRunningRound);
+      
    }
-
-    //  console.log(`Computers score: ${computerScore} Your score: ${humanScore}`);
 }
 
 
-// function playGame(){
+function finishGame(){
+if(humanScore == 5 || computerScore == 5) {
 
-//         for(i=1; i<=5; i++){
+  if (humanScore > computerScore){
 
-//             let humanChoice = getHumanChoice();
-//             let computerChoice = getComputerChoice();
+    paraRunningRound.textContent = "You are the winner! You have " + humanScore + " points and computer has " + computerScore + " points.";
+        roundAnnounce.appendChild(paraRunningRound);
+            
+        }
+        else  {
 
-//              console.log("Round number: " + i );
-//              playRound(humanChoice, computerChoice);
-//         }
-//         console.log("5 rounds are done!")
-//         //winner is?
+          paraRunningRound.textContent = "You lost! You have " + humanScore + " points and computer has " + computerScore + " points. Computer winns!";
+        roundAnnounce.appendChild(paraRunningRound);
+            
+        }
+      
 
-//         if (humanScore > computerScore){
-//             console.log("You are the winner! After 5 rounds you have " + humanScore + " points and computer has " + computerScore + " points.");
-//         }
-//         else if (humanScore < computerScore){
-//             console.log("You lost! After 5 rounds you have " + humanScore + " points and computer has " + computerScore + " points. Computer winns!");
-//         }
-//         else {
-             
-//             console.log("We have no winner! After 5 rounds you have " + humanScore + " points and computer has " + computerScore + " points.");
-//         }
+   buttons.remove();
+   reset.textContent = "Play Again";
+   reset.classList.add('btn');
+   divHolderTwo.classList.add("button-group");
+   divHolderTwo.appendChild(reset);
+
+   
         
-// }
-//  playGame();
+}
+
+
+
+}
+
+ 
