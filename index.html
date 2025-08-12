@@ -6,6 +6,8 @@
     <title>Document</title>
     <script src="game.js" defer></script>
      <style>
+
+      
     .row {
       display: flex;
       justify-content: space-between;
@@ -43,20 +45,31 @@
 .button-group .btn:hover {
   background: #0056b3;
 }
+.holder{
+  border: #d36dfb solid 1px;
+  padding: 40px 50px;
+  margin: 50px 100px;
+}
   </style>
 </head>
 <body>
-     <div class="row">
+  <div class="holder">
+    <div class="row">
          
     <div id="humanScore" class="box">0</div>
       
     <div id="computerScore" class="box">0</div>
   </div>
-
-  <div class="button-group">
+</div>
+  <div class="holder">
+    <div class="button-group">
   <button id="rock" class="btn">Rock</button>
   <button class="btn">Paper</button>
   <button class="btn">Scissors</button>
 </div>
+  </div>
+  <div class="holder"></div>
+     
+  
 </body>
 </html>
